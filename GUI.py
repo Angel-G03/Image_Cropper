@@ -5,16 +5,17 @@ from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 from Cropper import Cropp
 
+# Variable will change
 file_list = []
 
 def file_select():
     """ A method for the file select button to open the select files window"""
     filenames = fd.askopenfilenames(title="Select Files", filetypes=[("JPG Files", "*.jpg"), ("PNG Files", "*.png")])
     fileset = list(filenames)
-    if file_list == []:
+    if file_list == []: # First time selecting files
         for file in fileset:
             file_list.append(file)
-    else:
+    else: # After the each file selection, the list must be reset
         file_list.clear()
         for file in fileset:
             file_list.append(file)
@@ -30,7 +31,7 @@ title_label = Label(root, text="Image Cropper").grid(row=1, column=1)
 # Is there an alternative to blank labels?
 blank_space = Label(root, text="").grid(row=0, column=1)
 
-# Entries for new dimensions - Compress this mes
+# Entries for new dimensions
 top_entry = ttk.Entry(root)
 top_entry.grid(row=3, column=3)
 top_entry.insert(END, '0')
