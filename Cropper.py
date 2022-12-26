@@ -24,7 +24,7 @@ class Cropp:
                     cropped = cropped.save(f"{path}_cropped.jpg")
                 elif ext == 'png':
                     cropped = cropped.save(f"{path}_cropped.png")
-            elif save_mode == "Overwrite": # Bug when overwriting source files of an alphabetical name, but not if they're already a new save
+            elif save_mode == "Overwrite":
                 if ext == 'jpg':
                     cropped = cropped.save(f"{path}.jpg")
                 elif ext == 'png':
